@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bqptfuo8clrhm"]
+
+[ext_resource type="Texture2D" uid="uid://d12v4kbnmqlwl" path="res://Assets/World/whitetile.png" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://2cvfp37y3icj" path="res://Assets/World/tileset.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://bf03ab30i43wg" path="res://Scripts/World/land.gd" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://tcdh3selsw1a" path="res://Assets/World/simpletileset.png" id="2_jjvhh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
+texture = ExtResource("1_8gbba")
+texture_region_size = Vector2i(32, 27)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
+texture = ExtResource("2_jjvhh")
+texture_region_size = Vector2i(32, 27)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bo1nx"]
+tile_shape = 3
+tile_layout = 1
+tile_offset_axis = 1
+tile_size = Vector2i(32, 27)
+sources/0 = SubResource("TileSetAtlasSource_jjvhh")
+sources/1 = SubResource("TileSetAtlasSource_21xkr")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jjvhh"]
+noise_type = 0
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kry3j"]
+noise = SubResource("FastNoiseLite_jjvhh")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gbba"]
+texture = ExtResource("1_jjgbg")
+texture_region_size = Vector2i(32, 27)
+2:3/next_alternative_id = 3
+2:3/0 = 0
+2:3/1 = 1
+2:3/1/modulate = Color(1, 0.5858641, 0.52268517, 1)
+2:3/2 = 2
+2:3/2/modulate = Color(0.7107347, 1, 0.6765677, 1)
+2:4/next_alternative_id = 4
+2:4/0 = 0
+2:4/1 = 1
+2:4/1/modulate = Color(1, 0.7161841, 0.62321925, 1)
+2:4/3 = 3
+2:4/3/modulate = Color(0.5542384, 1, 0.51216394, 1)
+
+[sub_resource type="TileSet" id="TileSet_jjvhh"]
+tile_shape = 3
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 27)
+sources/0 = SubResource("TileSetAtlasSource_8gbba")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
+texture = ExtResource("1_jjgbg")
+texture_region_size = Vector2i(32, 27)
+3:0/0 = 0
+3:1/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_21xkr"]
+tile_shape = 3
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 27)
+sources/0 = SubResource("TileSetAtlasSource_kry3j")
+
+[node name="Main" type="Node2D" unique_id=1149697206]
+
+[node name="Land" type="TileMapLayer" parent="." unique_id=360756700]
+texture_filter = 1
+position = Vector2(0, 700)
+rotation = -1.5707964
+tile_set = SubResource("TileSet_bo1nx")
+script = ExtResource("2_bo1nx")
+noise_tex = SubResource("NoiseTexture2D_kry3j")
+
+[node name="Towns & Cities" type="TileMapLayer" parent="." unique_id=1390509827]
+texture_filter = 1
+tile_set = SubResource("TileSet_jjvhh")
+
+[node name="Water" type="TileMapLayer" parent="." unique_id=1889713145]
+texture_filter = 1
+tile_set = SubResource("TileSet_21xkr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1238362811]
+anchor_mode = 0
+zoom = Vector2(0.5, 0.5)
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1855850276]
+anchor_mode = 0
+zoom = Vector2(0.1, 0.1)
