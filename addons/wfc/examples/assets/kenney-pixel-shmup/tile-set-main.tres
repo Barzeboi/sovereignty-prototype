@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bf6ft5mo8umpn"]
+[gd_resource type="TileSet" format=3 uid="uid://bf6ft5mo8umpn"]
 
 [ext_resource type="Texture2D" uid="uid://cmph00k1t22u5" path="res://addons/wfc/examples/assets/kenney-pixel-shmup/tiles_packed.png" id="1_7v70a"]
 
