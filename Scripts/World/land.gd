@@ -23,6 +23,7 @@ func _generate_map():
 	print(noise.seed)
 	for x in range(-map_width/2, map_width/2):
 		for y in range(-map_height/ 2, map_height/2):
+			tile_set.custom_data_layers
 			var noise_val: float = noise.get_noise_2d(x, y)
 			print(noise_val)
 			if noise_val <= 0.0:
