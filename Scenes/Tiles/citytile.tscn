@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://e88wvbbv8bja"]
+
+[ext_resource type="Texture2D" uid="uid://cbfbdqtptmksm" path="res://Assets/World/citytile.png" id="1_itgwi"]
+[ext_resource type="Script" uid="uid://pccsd15nevsi" path="res://Scripts/World/Tiles/citytile.gd" id="2_q01nd"]
+
+[node name="citytile" type="Sprite2D" unique_id=1178885754]
+texture_filter = 1
+texture = ExtResource("1_itgwi")
+script = ExtResource("2_q01nd")

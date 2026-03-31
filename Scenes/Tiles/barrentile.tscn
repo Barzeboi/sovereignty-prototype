@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djpblmocnjm5f"]
+
+[ext_resource type="Texture2D" uid="uid://brmd11w5w8hyg" path="res://Assets/World/simpletileset_0005.png" id="1_0y1mp"]
+[ext_resource type="Script" uid="uid://c4tc5lelrcepv" path="res://Scripts/World/Tiles/barrentile.gd" id="2_6f28l"]
+
+[node name="barrentile" type="Sprite2D" unique_id=1497424033]
+texture = ExtResource("1_0y1mp")
+script = ExtResource("2_6f28l")

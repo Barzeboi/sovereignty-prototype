@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dwvut1ne0icvw"]
+
+[ext_resource type="Texture2D" uid="uid://dud4becqfms8q" path="res://Assets/World/simpletileset_0004.png" id="1_mqo3r"]
+[ext_resource type="Script" uid="uid://8vmdebymhnj8" path="res://Scripts/World/Tiles/watertile.gd" id="2_oiohi"]
+
+[node name="watertile" type="Sprite2D" unique_id=310563251]
+texture_filter = 1
+texture = ExtResource("1_mqo3r")
+script = ExtResource("2_oiohi")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cnts0oqncv1oe"]
+
+[ext_resource type="Texture2D" uid="uid://cq4p8psk2pwta" path="res://Assets/World/simpletileset_0002.png" id="1_m8v6p"]
+[ext_resource type="Script" uid="uid://c7c4x06f6hfvh" path="res://Scripts/World/Tiles/grasstile.gd" id="2_yjnar"]
+
+[node name="grasstile" type="Sprite2D" unique_id=2051934193]
+texture_filter = 1
+texture = ExtResource("1_m8v6p")
+script = ExtResource("2_yjnar")

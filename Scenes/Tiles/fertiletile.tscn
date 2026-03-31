@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://devdgkvv8rmqy"]
+
+[ext_resource type="Texture2D" uid="uid://brb3rvx7c76ja" path="res://Assets/World/simpletileset_0003.png" id="1_tey3c"]
+[ext_resource type="Script" uid="uid://crcrcqh6ebc5n" path="res://Scripts/World/Tiles/fertiletile.gd" id="2_fceuv"]
+
+[node name="fertiletile" type="Sprite2D" unique_id=1271452823]
+texture = ExtResource("1_tey3c")
+script = ExtResource("2_fceuv")
