@@ -5,7 +5,7 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2sdx"]
 texture = ExtResource("1_0hgqg")
-texture_region_size = Vector2i(32, 27)
+texture_region_size = Vector2i(96, 81)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -17,7 +17,7 @@ texture_region_size = Vector2i(32, 27)
 tile_shape = 3
 tile_layout = 1
 tile_offset_axis = 1
-tile_size = Vector2i(32, 27)
+tile_size = Vector2i(96, 81)
 custom_data_layer_0/name = "fertility"
 custom_data_layer_0/type = 2
 sources/0 = SubResource("TileSetAtlasSource_y2sdx")
@@ -37,4 +37,6 @@ script = ExtResource("1_w0ae3")
 noise_tex = SubResource("NoiseTexture2D_y2sdx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1413521087]
-enabled = false
+zoom = Vector2(0.1, 0.1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720415482]

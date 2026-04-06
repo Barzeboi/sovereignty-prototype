@@ -3,8 +3,8 @@ extends TileMapLayer
 @export var noise_tex: NoiseTexture2D
 var map_gen_done = false
 var noise: Noise
-var height: int = 400
-var width: int = 400
+var height: int = 800
+var width: int = 800
 var number: int = 0
 var rand_num: int
 var tile_data: TileData = TileData.new()
@@ -15,7 +15,7 @@ var barren_atlas: Vector2i = Vector2i(4,0)
 
 func _ready() -> void:
 	noise = noise_tex.noise
-	number = 602715457
+	number = randi()
 	_generate_map()
 	_generate_map_fertility()
 
@@ -27,9 +27,9 @@ func _generate_map():
 			var noise_val : float = noise.get_noise_2d(x,y)
 			if noise_val <= 0.05:
 				set_cell(Vector2i(x,y), 0, water_atlas)
-			elif noise_val <= 0.12:
+			elif noise_val <= 0.14:
 				set_cell(Vector2i(x,y), 0, barren_atlas)
-			elif noise_val > 0.12:
+			elif noise_val > 0.14:
 				set_cell(Vector2i(x,y), 0, grass_atlas)
 		
 	map_gen_done = true
@@ -44,9 +44,10 @@ func _generate_map_fertility():
 			var data = get_cell_tile_data(Vector2i(x,y))
 			if data && cell == Vector2i(1,0):
 				data.set_custom_data("fertility", randi_range(25, 100))
-				if data.get_custom_data("fertility") >= 90:
+				if data.get_custom_data("fertility") >= 100:
 					set_cell(Vector2i(x,y), 0, fertile_atlas)
-					if rand_num == 15:
+					if rand_num == 14:
 						for cells in surround_cells:
 							set_cell(cells, 0, fertile_atlas)
-				print(data.get_custom_data("fertility"))
+				#print(data.get_custom_data("fertility"))
+				print(rand_num)
