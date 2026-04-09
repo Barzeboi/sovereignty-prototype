@@ -3,8 +3,8 @@ extends TileMapLayer
 @export var noise_tex: NoiseTexture2D
 var map_gen_done = false
 var noise: Noise
-var height: int = 800
-var width: int = 800
+var height: int = Global.height
+var width: int = Global.width
 var number: int = 0
 var rand_num: int
 var tile_data: TileData = TileData.new()
@@ -12,6 +12,7 @@ var grass_atlas: Vector2i = Vector2i(1,0)
 var fertile_atlas: Vector2i = Vector2i(2,0)
 var water_atlas: Vector2i = Vector2i(3,0)
 var barren_atlas: Vector2i = Vector2i(4,0)
+
 
 func _ready() -> void:
 	noise = noise_tex.noise

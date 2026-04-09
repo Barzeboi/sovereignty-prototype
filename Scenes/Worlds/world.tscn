@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1qxrxprb8mgm" path="res://Assets/Tiles/simpletileset.png" id="1_0hgqg"]
 [ext_resource type="Script" uid="uid://b6i7kcu7ulc1p" path="res://Scripts/Worlds/proc_gen_map.gd" id="1_w0ae3"]
+[ext_resource type="Script" uid="uid://bgyft4kifyuhc" path="res://Scripts/Worlds/loc_map.gd" id="3_y2sdx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2sdx"]
 texture = ExtResource("1_0hgqg")
@@ -30,13 +31,16 @@ noise = SubResource("FastNoiseLite_0hgqg")
 
 [node name="World" type="Node2D" unique_id=1883085183]
 
-[node name="ProcGenMap" type="TileMapLayer" parent="." unique_id=1349358674]
+[node name="Layers" type="Node2D" parent="." unique_id=2085900429]
+
+[node name="ProcGenMap" type="TileMapLayer" parent="Layers" unique_id=1349358674]
 texture_filter = 1
 tile_set = SubResource("TileSet_fhqnu")
 script = ExtResource("1_w0ae3")
 noise_tex = SubResource("NoiseTexture2D_y2sdx")
 
+[node name="LocMap" type="TileMapLayer" parent="Layers" unique_id=720415482]
+script = ExtResource("3_y2sdx")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1413521087]
 zoom = Vector2(0.1, 0.1)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720415482]
