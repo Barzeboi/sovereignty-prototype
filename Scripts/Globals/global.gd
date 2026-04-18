@@ -1,4 +1,4 @@
 extends Node
 
-var width = 1000
-var height = 1000
+var width: int = 400
+var height: int = 400

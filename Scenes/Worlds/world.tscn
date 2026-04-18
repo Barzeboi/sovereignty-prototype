@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d1qxrxprb8mgm" path="res://Assets/Tiles/simpletileset.png" id="1_0hgqg"]
 [ext_resource type="Script" uid="uid://b6i7kcu7ulc1p" path="res://Scripts/Worlds/proc_gen_map.gd" id="1_w0ae3"]
-[ext_resource type="Script" uid="uid://bgyft4kifyuhc" path="res://Scripts/Worlds/loc_map.gd" id="3_y2sdx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2sdx"]
 texture = ExtResource("1_0hgqg")
@@ -19,12 +18,16 @@ tile_shape = 3
 tile_layout = 1
 tile_offset_axis = 1
 tile_size = Vector2i(96, 81)
+uv_clipping = true
 custom_data_layer_0/name = "fertility"
 custom_data_layer_0/type = 2
+custom_data_layer_1/name = "coordinates"
+custom_data_layer_1/type = 6
 sources/0 = SubResource("TileSetAtlasSource_y2sdx")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0hgqg"]
-noise_type = 0
+noise_type = 3
+frequency = 0.005
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y2sdx"]
 noise = SubResource("FastNoiseLite_0hgqg")
@@ -33,14 +36,15 @@ noise = SubResource("FastNoiseLite_0hgqg")
 
 [node name="Layers" type="Node2D" parent="." unique_id=2085900429]
 
+[node name="LocMap" type="TileMapLayer" parent="Layers" unique_id=1836379640]
+
 [node name="ProcGenMap" type="TileMapLayer" parent="Layers" unique_id=1349358674]
 texture_filter = 1
 tile_set = SubResource("TileSet_fhqnu")
 script = ExtResource("1_w0ae3")
 noise_tex = SubResource("NoiseTexture2D_y2sdx")
 
-[node name="LocMap" type="TileMapLayer" parent="Layers" unique_id=720415482]
-script = ExtResource("3_y2sdx")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1413521087]
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.04, 0.04)
+limit_left = 0
+limit_top = 0
