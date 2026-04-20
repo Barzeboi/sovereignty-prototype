@@ -62,4 +62,4 @@ func _input(event: InputEvent) -> void:
 			var pos_clicked = local_to_map(to_local(global_clicked))
 			var data = get_cell_tile_data(pos_clicked)
 			var coords = data.get_custom_data("coordinates")
-			print(pos_clicked)
+			print(coords)

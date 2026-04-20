@@ -1,3 +1,7 @@
-[gd_resource type="Resource" format=3 uid="uid://dhlda8wit08je"]
+[gd_resource type="Resource" script_class="CountryData" format=3 uid="uid://dhlda8wit08je"]
+
+[ext_resource type="Script" uid="uid://b3ac3xb5dn462" path="res://Scripts/Resources/country_data.gd" id="1_jer03"]
 
 [resource]
+script = ExtResource("1_jer03")
+color = Color(0.08197827, 0.25946695, 0.3081801, 1)

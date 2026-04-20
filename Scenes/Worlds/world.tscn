@@ -3,6 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://d1qxrxprb8mgm" path="res://Assets/Tiles/simpletileset.png" id="1_0hgqg"]
 [ext_resource type="Script" uid="uid://b6i7kcu7ulc1p" path="res://Scripts/Worlds/proc_gen_map.gd" id="1_w0ae3"]
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0hgqg"]
+
+[sub_resource type="TileSet" id="TileSet_y2sdx"]
+tile_shape = 3
+tile_layout = 1
+tile_offset_axis = 1
+tile_size = Vector2i(96, 81)
+sources/0 = SubResource("TileSetScenesCollectionSource_0hgqg")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2sdx"]
 texture = ExtResource("1_0hgqg")
 texture_region_size = Vector2i(96, 81)
@@ -37,6 +46,7 @@ noise = SubResource("FastNoiseLite_0hgqg")
 [node name="Layers" type="Node2D" parent="." unique_id=2085900429]
 
 [node name="LocMap" type="TileMapLayer" parent="Layers" unique_id=1836379640]
+tile_set = SubResource("TileSet_y2sdx")
 
 [node name="ProcGenMap" type="TileMapLayer" parent="Layers" unique_id=1349358674]
 texture_filter = 1
