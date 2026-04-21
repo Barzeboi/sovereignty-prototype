@@ -44,6 +44,7 @@ func _generate_map_info():
 			var data = get_cell_tile_data(Vector2i(x,y))
 			if data:
 				data.set_custom_data("coordinates", Vector2i(x,y))
+				print(data.get_custom_data("coordinates"))
 			if data && cell == Vector2i(1,0):
 				data.set_custom_data("fertility", randi_range(25, 100))
 				if data.get_custom_data("fertility") >= 100:
@@ -62,4 +63,4 @@ func _input(event: InputEvent) -> void:
 			var pos_clicked = local_to_map(to_local(global_clicked))
 			var data = get_cell_tile_data(pos_clicked)
 			var coords = data.get_custom_data("coordinates")
-			print(coords)
+			print(pos_clicked)

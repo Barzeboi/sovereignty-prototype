@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dq6et8a0hucmq"]
+
+[ext_resource type="Script" uid="uid://niku6yecwsqk" path="res://Scripts/Resources/city_data.gd" id="1_hkplu"]
+[ext_resource type="Texture2D" uid="uid://unw2y04xfdep" path="res://Assets/Tiles/locationstileset_0002.png" id="1_x4g53"]
+
+[node name="Capitol" type="Node2D" unique_id=170172443]
+script = ExtResource("1_hkplu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=213627688]
+texture = ExtResource("1_x4g53")

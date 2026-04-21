@@ -1,6 +1,8 @@
 extends TileMapLayer
 
-#@onready var proc_gen_map: TileMapLayer = $'../ProcGenMap'
+@onready var proc_gen_map: TileMapLayer = $'../ProcGenMap'
+var height: int = Global.height
+var width: int = Global.width
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,4 +15,6 @@ func _process(delta: float) -> void:
 
 
 func _generate_locations():
-	pass
+	for x in range(width):
+		for y in range(height):
+			pass
