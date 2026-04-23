@@ -1,16 +1,12 @@
 [gd_scene format=3 uid="uid://dk2q30xp00xam"]
 
 [ext_resource type="Texture2D" uid="uid://d1qxrxprb8mgm" path="res://Assets/Tiles/simpletileset.png" id="1_0hgqg"]
+[ext_resource type="PackedScene" uid="uid://dq6et8a0hucmq" path="res://Scenes/Tiles/locations/capitol.tscn" id="1_ohl8q"]
 [ext_resource type="Script" uid="uid://b6i7kcu7ulc1p" path="res://Scripts/Worlds/proc_gen_map.gd" id="1_w0ae3"]
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0hgqg"]
-
-[sub_resource type="TileSet" id="TileSet_y2sdx"]
-tile_shape = 3
-tile_layout = 1
-tile_offset_axis = 1
-tile_size = Vector2i(96, 81)
-sources/0 = SubResource("TileSetScenesCollectionSource_0hgqg")
+[ext_resource type="Script" uid="uid://bgyft4kifyuhc" path="res://Scripts/Worlds/loc_map.gd" id="1_y2sdx"]
+[ext_resource type="PackedScene" uid="uid://8sxpfixruyhf" path="res://Scenes/Tiles/locations/city.tscn" id="2_8q0pn"]
+[ext_resource type="PackedScene" uid="uid://di8tca5dbcqnn" path="res://Scenes/Tiles/locations/town.tscn" id="3_vbdlg"]
+[ext_resource type="Texture2D" uid="uid://dn7jdf2q4kmq1" path="res://Saved_Settings/Textures/proc_gen_settings.tres" id="5_8q0pn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2sdx"]
 texture = ExtResource("1_0hgqg")
@@ -34,27 +30,37 @@ custom_data_layer_1/name = "coordinates"
 custom_data_layer_1/type = 6
 sources/0 = SubResource("TileSetAtlasSource_y2sdx")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_0hgqg"]
-noise_type = 3
-frequency = 0.005
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0hgqg"]
+resource_name = "Locations"
+scenes/1/scene = ExtResource("1_ohl8q")
+scenes/2/scene = ExtResource("2_8q0pn")
+scenes/3/scene = ExtResource("3_vbdlg")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y2sdx"]
-noise = SubResource("FastNoiseLite_0hgqg")
+[sub_resource type="TileSet" id="TileSet_y2sdx"]
+tile_shape = 3
+tile_layout = 1
+tile_offset_axis = 1
+tile_size = Vector2i(96, 81)
+sources/0 = SubResource("TileSetScenesCollectionSource_0hgqg")
 
 [node name="World" type="Node2D" unique_id=1883085183]
 
 [node name="Layers" type="Node2D" parent="." unique_id=2085900429]
 
-[node name="LocMap" type="TileMapLayer" parent="Layers" unique_id=1836379640]
-tile_set = SubResource("TileSet_y2sdx")
-
 [node name="ProcGenMap" type="TileMapLayer" parent="Layers" unique_id=1349358674]
 texture_filter = 1
 tile_set = SubResource("TileSet_fhqnu")
 script = ExtResource("1_w0ae3")
-noise_tex = SubResource("NoiseTexture2D_y2sdx")
+noise_tex = ExtResource("5_8q0pn")
+
+[node name="LocMap" type="TileMapLayer" parent="Layers" unique_id=1836379640]
+tile_set = SubResource("TileSet_y2sdx")
+script = ExtResource("1_y2sdx")
+noise_tex = ExtResource("5_8q0pn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1413521087]
 zoom = Vector2(0.04, 0.04)
 limit_left = 0
 limit_top = 0
+
+[node name="Timer" type="Timer" parent="." unique_id=1317300698]

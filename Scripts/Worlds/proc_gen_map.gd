@@ -44,7 +44,6 @@ func _generate_map_info():
 			var data = get_cell_tile_data(Vector2i(x,y))
 			if data:
 				data.set_custom_data("coordinates", Vector2i(x,y))
-				print(data.get_custom_data("coordinates"))
 			if data && cell == Vector2i(1,0):
 				data.set_custom_data("fertility", randi_range(25, 100))
 				if data.get_custom_data("fertility") >= 100:

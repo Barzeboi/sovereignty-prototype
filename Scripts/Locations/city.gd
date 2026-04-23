@@ -1,4 +1,4 @@
 extends Node
 
 
-@export var city_data: CityData = CityData.new()
+@export var loc_data: LocationData = LocationData.new()

@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://dq6et8a0hucmq"]
 
-[ext_resource type="Script" uid="uid://niku6yecwsqk" path="res://Scripts/Resources/city_data.gd" id="1_hkplu"]
 [ext_resource type="Texture2D" uid="uid://unw2y04xfdep" path="res://Assets/Tiles/locationstileset_0002.png" id="1_x4g53"]
+[ext_resource type="Script" uid="uid://pr0uohm5ry1p" path="res://Scripts/Locations/city.gd" id="1_yiksn"]
+[ext_resource type="Script" uid="uid://dkghsd4t6nhcm" path="res://location_data.gd" id="2_kuivr"]
 
-[node name="Capitol" type="Node2D" unique_id=170172443]
-script = ExtResource("1_hkplu")
+[sub_resource type="Resource" id="Resource_m0vwb"]
+script = ExtResource("2_kuivr")
+level = 5
+metadata/_custom_type_script = "uid://dkghsd4t6nhcm"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yiksn"]
+radius = 25.019993
+
+[node name="Capitol" type="Area2D" unique_id=1359118812]
+script = ExtResource("1_yiksn")
+loc_data = SubResource("Resource_m0vwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=213627688]
 texture = ExtResource("1_x4g53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1344831252]
+shape = SubResource("CircleShape2D_yiksn")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://di8tca5dbcqnn"]
+
+[ext_resource type="Script" uid="uid://pr0uohm5ry1p" path="res://Scripts/Locations/city.gd" id="1_3r0bv"]
+[ext_resource type="Texture2D" uid="uid://djdook3d5tml6" path="res://Assets/Tiles/locationstileset_0003.png" id="1_vgp0s"]
+[ext_resource type="Script" uid="uid://dkghsd4t6nhcm" path="res://location_data.gd" id="2_msr0t"]
+
+[sub_resource type="Resource" id="Resource_oh14o"]
+script = ExtResource("2_msr0t")
+metadata/_custom_type_script = "uid://dkghsd4t6nhcm"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3r0bv"]
+radius = 24.186773
+
+[node name="Town" type="Area2D" unique_id=1234509201]
+script = ExtResource("1_3r0bv")
+loc_data = SubResource("Resource_oh14o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=89565555]
+texture = ExtResource("1_vgp0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=526489410]
+shape = SubResource("CircleShape2D_3r0bv")
